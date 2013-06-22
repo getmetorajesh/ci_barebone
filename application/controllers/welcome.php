@@ -20,12 +20,17 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+
+		
+		$this->output->enable_profiler(ENVIRONMENT == 'development');
+		$this->benchmark->mark('textile_start');
 		$this->load->view('welcome_message');
 		$parser = new Textile\Parser();
 
 		$str = 'h1. Welcome'. PHP_EOL;
 		$str .= '* List item'.PHP_EOL;
 		$str .= '* Antother List item';
+			$this->benchmark->mark('textile_end');
 
 		echo $parser->textileThis($str);
 	}
