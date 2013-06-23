@@ -27,7 +27,7 @@ class Welcome extends CI_Controller {
 		$this->load->view('welcome_message');
 		$parser = new Textile\Parser();
 
-		$st = 'h1. Welcome'. PHP_EOL;
+		$str = 'h1. Welcome'. PHP_EOL;
 		$str .= '* List item'.PHP_EOL;
 		$str .= '* Antother List item';
 			$this->benchmark->mark('textile_end');
