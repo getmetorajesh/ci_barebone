@@ -24,3 +24,8 @@ function textile_sanitize($string){
     $whitelist = '/[^a-zA-Z0-9а-яА-ЯéüртхцчшщъыэюьЁуфҐ \.\*\+\\n|#;:!"%@{} _-]/';
     return preg_replace($whitelist, '', $string);
 }
+
+
+function escape($str){
+	return textile_sanitize($str, ENT_QUOTES,'UTF-8');
+}
